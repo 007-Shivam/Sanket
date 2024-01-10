@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sanket.activities.About
+import com.example.sanket.activities.AppLayout
 import com.example.sanket.activities.Contact
-import com.example.sanket.activities.HamburgerMenu
 import com.example.sanket.activities.HomePage
 import com.example.sanket.activities.LogIn
 import com.example.sanket.activities.Profile
@@ -31,12 +32,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "HomePage") {
-        composable("HamburgerMenu") {
-            HamburgerMenu(navController = navController)
-        }
+    NavHost(navController = navController, startDestination = "LogIn") {
         composable("HomePage") {
-            HomePage(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                HomePage(navController = currentNavController)
+            }
         }
         composable("SignUp") {
             SignUp(navController = navController)
@@ -45,25 +45,39 @@ fun MyNavigation() {
             LogIn(navController = navController)
         }
         composable("About") {
-            About(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                About(navController = currentNavController)
+            }
         }
         composable("Contact") {
-            Contact(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                Contact(navController = currentNavController)
+            }
         }
         composable("Profile") {
-            Profile(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                Profile(navController = currentNavController)
+            }
         }
         composable("SignDictionary") {
-            SignDictionary(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                SignDictionary(navController = currentNavController)
+            }
         }
         composable("Tutorial") {
-            Tutorial(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                Tutorial(navController = currentNavController)
+            }
         }
         composable("SignToWord") {
-            SignToWord(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                SignToWord(navController = currentNavController)
+            }
         }
         composable("WordToSign") {
-            WordToSign(navController = navController)
+            AppLayout(navController = navController) { currentNavController ->
+                WordToSign(navController = currentNavController)
+            }
         }
     }
 }

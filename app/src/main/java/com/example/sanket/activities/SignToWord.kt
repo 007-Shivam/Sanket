@@ -8,7 +8,7 @@ import androidx.compose.material3.Text
 
 @Composable
 fun SignToWord(navController: NavHostController) {
-    Text(text = "Sjvsjkvksbvsbv")
+    Text(text = "Word")
 }
 
 @Preview

@@ -8,7 +8,7 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun About(navController: NavHostController) {
-    Text(text = "Sjvsjkvksbvsbv")
+    Text(text = "About")
 }
 
 @Preview

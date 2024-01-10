@@ -8,7 +8,7 @@ import androidx.compose.material3.Text
 
 @Composable
 fun Contact(navController: NavHostController) {
-    Text(text = "Sjvsjkvksbvsbv")
+    Text(text = "Contact")
 }
 
 @Preview
