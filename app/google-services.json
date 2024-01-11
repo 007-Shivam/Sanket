@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489198295951",
+    "project_id": "sanket-b844e",
+    "storage_bucket": "sanket-b844e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489198295951:android:aae7aa0e3f4626fbc109fa",
+        "android_client_info": {
+          "package_name": "com.example.sanket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2slIcwQhMs0hAXtvPYYwmEvCzK-GBYU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

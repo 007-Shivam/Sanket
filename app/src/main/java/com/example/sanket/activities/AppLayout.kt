@@ -1,5 +1,6 @@
 package com.example.sanket.activities
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -34,6 +35,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -42,6 +44,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -146,6 +149,8 @@ fun AppLayout(navController: NavHostController, content: @Composable (NavHostCon
                         title = {
                             Text(text = "Sanket")
                         },
+                        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(254, 246, 239)
+                        ),
                         navigationIcon = {
                             IconButton(onClick = {
                                 scope.launch {
@@ -157,7 +162,12 @@ fun AppLayout(navController: NavHostController, content: @Composable (NavHostCon
                                     contentDescription = "Menu"
                                 )
                             }
-                        }
+                        },
+                                modifier = Modifier
+                                .border(
+                                width = 2.dp, // Set the border width
+                        color = Color.Black // Set the border color
+                    )
                     )
                 }
             )
@@ -167,7 +177,7 @@ fun AppLayout(navController: NavHostController, content: @Composable (NavHostCon
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(innerPadding),
-                    color = MaterialTheme.colorScheme.background
+
                 ) {
                     content(navController)
                 }

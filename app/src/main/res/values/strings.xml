@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Sanket</string>
+
+    <string name="email">Email</string>
+    <string name="pas">Password</string>
+    <string name="proceed">Proceed with your</string>
+    <string name="login">Login</string>
+    <string name="no_acc">Don`t have account? Signup</string>
+
+    <string name="signup">Signup</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="uni">University</string>
+    <string name="con">Confirm Password</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="hv_acc">Already have an account? Log In</string>
+    <string name="privacy">I have read through the privacy policy, terms and conditions to make a donation.</string>
+
+    <string name="p_name">Shivam Bhosle</string>
+    <string name="p_email">abc@gmail.com</string>
+    <string name="p_ph">+91 5489300310</string>
+    <string name="p_uni">BVPDET</string>
+    <string name="p_gen">Male</string>
+    <string name="gen">Gender</string>
+    <string name="logout">LOG OUT</string>
+    <string name="b_join">JOIN</string>
+
+
+
+
+
 </resources>
