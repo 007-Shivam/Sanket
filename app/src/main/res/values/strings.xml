@@ -27,6 +27,21 @@
     <string name="logout">LOG OUT</string>
     <string name="b_join">JOIN</string>
 
+    <string name="contact">CONTACT US</string>
+    <string name="content">We\'d love to hear from you and assist with any inquiries
+        or feedback you may have regarding Sanket. Our dedicated support team
+        is here to ensure your experience is seamless and enjoyable.</string>
+    <string name="customer">CUSTOMER SUPPORT EMAIL:</string>
+    <string name="cust_email">support@sanketapp.com</string>
+    <string name="tech">TECHNICAL ASSISTANCE:</string>
+    <string name="tech_email">techsupport@sanketapp.com</string>
+    <string name="business">BUSINESS INQUIRIES:</string>
+    <string name="business_email">partnerships@sanketapp.com</string>
+    <string name="social_media">SOCIAL MEDIA:</string>
+
+
+
+
 
 
 
