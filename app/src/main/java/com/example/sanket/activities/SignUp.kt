@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -33,16 +35,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -50,7 +56,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.sanket.R
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
 fun SignUp(context: Context = LocalContext.current, navController: NavController) {
     var name by remember { mutableStateOf(TextFieldValue()) }
@@ -60,7 +66,9 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
     var password by remember { mutableStateOf(TextFieldValue()) }
     var confirm by remember { mutableStateOf(TextFieldValue()) }
     var selectedGender by remember{ mutableStateOf("") }
-    var privacyPolicy by remember { mutableStateOf(false) }
+    var privacyPolicy by remember { mutableStateOf(true) }
+    val keyboardController = LocalSoftwareKeyboardController.current
+
 
     Box() {
         Image(
@@ -102,6 +110,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                             brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                             shape = RoundedCornerShape(50.dp)
                         ),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            keyboardController?.hide()
+                        }
+                    ),
                     value = name,
                     onValueChange = { name = it },
                     placeholder = { Text(text = stringResource(id = R.string.name)) },
@@ -128,6 +145,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                             brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                             shape = RoundedCornerShape(50.dp)
                         ),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            keyboardController?.hide()
+                        }
+                    ),
                     value = email,
                     onValueChange = { email = it },
                     placeholder = { Text(text = stringResource(id = R.string.email)) },
@@ -153,6 +179,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                             brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                             shape = RoundedCornerShape(50.dp)
                         ),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            keyboardController?.hide()
+                        }
+                    ),
                     value = phone,
                     onValueChange = { phone = it },
                     placeholder = { Text(text = stringResource(id = R.string.phone)) },
@@ -227,6 +262,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                             brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                             shape = RoundedCornerShape(50.dp)
                         ),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            keyboardController?.hide()
+                        }
+                    ),
                     value = password,
                     onValueChange = { password = it },
                     placeholder = { Text(text = stringResource(id = R.string.pas)) },
@@ -253,6 +297,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                             brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                             shape = RoundedCornerShape(50.dp)
                         ),
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            keyboardController?.hide()
+                        }
+                    ),
                     value = confirm,
                     onValueChange = { confirm = it },
                     placeholder = { Text(text = stringResource(id = R.string.con)) },
@@ -292,22 +345,23 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                 Button(
                     onClick = {
                         if(name.text == ""
-                            && email.text==""
-                            && phone.text==""
-                            && gender.text==""
-                            && password.text==""
-                            && confirm.text==""
+                                    && email.text==""
+                                    && phone.text==""
+                                    && gender.text==""
+                                    && password.text==""
+                                    && confirm.text==""
+                            && privacyPolicy
                         ){
+                            Toast.makeText(context,
+                                "Please fill all text fields.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
                             Toast.makeText(context,
                                 "Successfully Signed Up",
                                 Toast.LENGTH_LONG
                             ).show()
                             navController.navigate("LogIn")
-                        } else {
-                            Toast.makeText(context,
-                                "Please fill all text fields.",
-                                Toast.LENGTH_LONG
-                            ).show()
                         } },
                     colors = ButtonDefaults.buttonColors(containerColor = Color(94, 48, 35)),
                     modifier = Modifier

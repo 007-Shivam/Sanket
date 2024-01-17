@@ -19,6 +19,7 @@ import com.example.sanket.activities.SignToWord
 import com.example.sanket.activities.SignUp
 import com.example.sanket.activities.Tutorial
 import com.example.sanket.activities.WordToSign
+import com.example.sanket.dictionary.A
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "Contact") {
+    NavHost(navController = navController, startDestination = "LogIn") {
         composable("HomePage") {
             AppLayout(navController = navController) { currentNavController ->
                 HomePage(navController = currentNavController)
@@ -77,6 +78,11 @@ fun MyNavigation() {
         composable("WordToSign") {
             AppLayout(navController = navController) { currentNavController ->
                 WordToSign(navController = currentNavController)
+            }
+        }
+        composable("A") {
+            AppLayout(navController = navController) { currentNavController ->
+                A(navController = currentNavController)
             }
         }
     }

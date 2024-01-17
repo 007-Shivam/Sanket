@@ -1,20 +1,13 @@
 package com.example.sanket.activities
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,13 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,7 +31,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.sanket.R
-import androidx.compose.material3.Text as Text1
 import androidx.compose.ui.res.stringResource as stringResource1
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -55,7 +45,7 @@ fun About(navController: NavHostController) {
                 modifier = Modifier
                     .matchParentSize()
             )
-            Text1(
+            Text(
                 text = stringResource1(id = R.string.aboutus),
                 style = TextStyle(
                     fontSize = 40.sp,
@@ -67,38 +57,28 @@ fun About(navController: NavHostController) {
                     .fillMaxWidth()
                     .align(Alignment.TopCenter)
                     .padding(top = 30.dp)
+
                     .border(
-                        BorderStroke(width = 3.dp, color = Color.Black),
-                        shape = RoundedCornerShape(50.dp)
-                    )
-                    .border(
-                        width = 3.dp,
-                        brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
+                        width = 0.dp,
+                        brush = Brush.radialGradient(listOf(Color.Black, Color.Transparent)),
                         shape = RoundedCornerShape(50.dp)
                     ),
                 textAlign = TextAlign.Center
             )
-            TextField(
-                modifier = Modifier
-                    .padding(top = 125.dp),
-                value = about_us,
-                onValueChange = { about_us = it },
-                visualTransformation = PasswordVisualTransformation(),
-                placeholder = { Text(text = stringResource(id = R.string.about_us)) },
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.Transparent,
-                    focusedIndicatorColor = Color.Transparent,
-                    disabledIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent,
-                )
+        Text(text = stringResource(id = R.string.about_us),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 125.dp, start = 30.dp, end = 30.dp),
+            style = TextStyle(
+                fontSize = 23.sp,
+                fontFamily = FontFamily.Default,
+                fontWeight = FontWeight.Normal,
+                color = Color(94, 48, 35),
+            ),
 
-            )
+        )
     }
 }
-
-
-
-
 
 
 @Preview

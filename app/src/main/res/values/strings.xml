@@ -29,7 +29,13 @@
 
 
     <string name="aboutus">About Us</string>
-    <string name="about_us">Welcome to Sanket ,an innovative Word-to-Sign and Sign-to-Word Converter App! We strive to bridge communication gaps by providing a user friendly platform that seamlessly translates spoken and written words into sign language and vice-versa. \n\n Our mission is to empower individuals with hearing impairments and foster inclusivity by facilitating effective communication. We aim to make the world a more connected and inclusive place for every individual. \n\n Join us in breaking down the barriers and embracing a world where communication knows no bounds. </string>
+    <string name="about_us">Welcome to Sanket ,an innovative Word-to-Sign and Sign-to-Word Converter App!
+        We strive to bridge communication gaps by providing a user friendly platform that seamlessly
+        translates spoken and written words into sign language and vice-versa. \n\n Our mission is
+        to empower individuals with hearing impairments and foster inclusivity by facilitating effective
+        communication. We aim to make the world a more connected and inclusive place for every
+        individual. \n\n Join us in breaking down the barriers and embracing a world where communication
+        knows no bounds. </string>
 
     <string name="contact">CONTACT US</string>
     <string name="content">We\'d love to hear from you and assist with any inquiries
@@ -42,5 +48,24 @@
     <string name="business">BUSINESS INQUIRIES:</string>
     <string name="business_email">partnerships@sanketapp.com</string>
     <string name="social_media">SOCIAL MEDIA:</string>
+
+    <string name="sign_dic">Sign Dictionary</string>
+    <string name="sign_word">Sign to Word</string>
+    <string name="word_sign">Word to Sign</string>
+
+    <string name="tran">Translate</string>
+    <string name="cam">Click on the above icon to take a pic and translate the sign language</string>
+
+    <string name="hello">Hello</string>
+
+    <string name="word">Enter Word</string>
+    <string name="search">Search</string>
+
+    <string name="abdomen">Abdomen</string>
+    <string name="above">Above</string>
+    <string name="abolish">Abolish</string>
+    <string name="about">About</string>
+    <string name="absorb">Absorb</string>
+    <string name="abuse">Abuse</string>
 
 </resources>
