@@ -66,7 +66,7 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
     var password by remember { mutableStateOf(TextFieldValue()) }
     var confirm by remember { mutableStateOf(TextFieldValue()) }
     var selectedGender by remember{ mutableStateOf("") }
-    var privacyPolicy by remember { mutableStateOf(true) }
+    var privacyPolicy by remember { mutableStateOf(false) }
     val keyboardController = LocalSoftwareKeyboardController.current
 
 
