@@ -229,24 +229,6 @@ fun Contact(navController: NavHostController) {
                 }
 
             }
-//            item {
-//                Image(
-//                    painter = painterResource(id = R.drawable.linkedin1),
-//                    contentDescription = "logo",
-//                    modifier = Modifier
-//                        .padding(top = 0.dp, bottom = 0.dp, start = 140.dp)
-//                        .size(width = 26.dp, height = 26.dp)
-//                        .fillMaxWidth()
-//                        .wrapContentWidth(align = Alignment.Start),
-//                )
-//            }
-//            item {
-//
-//            }
-//            item {
-//
-//            }
-
         }
     }
 }

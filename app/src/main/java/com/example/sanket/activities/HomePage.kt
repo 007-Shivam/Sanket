@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.AsyncImage
 import com.example.sanket.R
 
 @Composable
@@ -45,8 +46,17 @@ fun HomePage(navController: NavHostController) {
                 .padding(top = 10.dp)
         ) {
 
-            Image(painter = painterResource(id = R.drawable.sign_dictionary), contentDescription = null,
-                modifier = Modifier.clickable { navController.navigate("SignDictionary") })
+            Image(painter = painterResource(id = R.drawable.sign_dictionary),
+                contentDescription = null,
+                modifier = Modifier.clickable { navController.navigate("SignDictionary") }
+            )
+
+//            AsyncImage(
+//                model = "https://i.imgur.com/a7Ak3iF.jpg",
+//                contentDescription = null,
+//            )
+
+
             Text(text = stringResource(id = R.string.sign_dic),
                 style = TextStyle(
                     fontSize = 35.sp,

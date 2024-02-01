@@ -118,7 +118,7 @@ fun AppLayout(navController: NavHostController, content: @Composable (NavHostCon
                             selected = index == selectedItemIndex,
                             onClick = {
                                 navController.navigate(route = item.page)
-                                selectedItemIndex = index
+                                selectedItemIndex = index // Update the selected item index
                                 scope.launch {
                                     drawerState.close()
                                 }
@@ -159,21 +159,19 @@ fun AppLayout(navController: NavHostController, content: @Composable (NavHostCon
                                 )
                             }
                         },
-                                modifier = Modifier
-                                .border(
-                                width = 2.dp, // Set the border width
-                        color = Color.Black // Set the border color
-                    )
+                        modifier = Modifier
+                            .border(
+                                width = 2.dp,
+                                color = Color.Black
+                            )
                     )
                 }
             )
-            {
-                innerPadding ->
+            { innerPadding ->
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(innerPadding),
-
+                        .padding(innerPadding)
                 ) {
                     content(navController)
                 }

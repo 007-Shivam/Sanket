@@ -113,7 +113,6 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
                         ).show()
                     } else {
                         showImg = true
-
                     }
                     keyboardController?.hide()
                 },
@@ -142,6 +141,6 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
 @Composable
 fun WordToSignPreview() {
     val context = LocalContext.current
-    val navController = rememberNavController()// Obtain the context from the composition
+    val navController = rememberNavController()
     WordToSign(context, navController)
 }
