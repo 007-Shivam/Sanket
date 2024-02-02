@@ -1,6 +1,7 @@
 package com.example.sanket.activities
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -42,31 +44,32 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.AsyncImage
 import com.example.sanket.R
+import com.example.sanket.data.allWords
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
 fun WordToSign(context: Context = LocalContext.current, navController: NavHostController) {
     var wts by remember { mutableStateOf(TextFieldValue()) }
     var showImg by remember { mutableStateOf(false) }
-    val keyboardController = LocalSoftwareKeyboardController.current
+    var imageUrl: String? by remember { mutableStateOf(null) }
 
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     Box(contentAlignment = Alignment.Center) {
         Image(
             painter = painterResource(id = R.drawable.bg),
             contentDescription = "background",
             contentScale = ContentScale.FillBounds,
-            modifier = Modifier
-                .matchParentSize()
+            modifier = Modifier.matchParentSize()
         )
-
 
         Column(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxHeight()
-                .padding(top = 100.dp)
+            modifier = Modifier.fillMaxHeight().padding(top = 100.dp)
         ) {
             TextField(
                 modifier = Modifier
@@ -84,12 +87,7 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
                     keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Done
                 ),
-                keyboardActions = KeyboardActions(
-                    onDone = {
-                        // Do something when the "Done" action is triggered
-                        keyboardController?.hide()
-                    }
-                ),
+                keyboardActions = KeyboardActions(onDone = { keyboardController?.hide() }),
                 value = wts,
                 onValueChange = { wts = it },
                 placeholder = { Text(text = stringResource(id = R.string.word)) },
@@ -100,42 +98,50 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
                     disabledIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                 ),
-                singleLine = true,
+                singleLine = true
             )
 
             Button(
                 onClick = {
-                    if(wts.text == ""){
-                        Toast.makeText(context,
-                            "Invalid credentials."
-                                    + "Please try again.",
+                    if (wts.text.isEmpty()) {
+                        Toast.makeText(
+                            context,
+                            "Invalid input. Please try again.",
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
-                        showImg = true
+                        val inputText =
+                            wts.text.lowercase(Locale.ROOT) // Convert input text to lowercase
+                        imageUrl = allWords[inputText]
+                        if (imageUrl != null) {
+                            showImg = true
+                        } else {
+                            Toast.makeText(
+                                context,
+                                "No image found for the input word.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
                     keyboardController?.hide()
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(94, 48, 35)),
-                modifier = Modifier
-                    .padding(top = 20.dp)
+                modifier = Modifier.padding(top = 20.dp)
             ) {
                 Text(text = stringResource(id = R.string.search))
             }
 
-            if (showImg) {
-                Image(
-                    painter = painterResource(id = R.drawable.hello),
-                    contentDescription = "hello",
-                    modifier = Modifier.padding(50.dp)
-                        .size(450.dp)
+            if (showImg && imageUrl != null) {
+                AsyncImage(
+                    model = imageUrl!!,
+                    contentDescription = wts.text,
+                    modifier = Modifier.padding(50.dp).size(450.dp)
                 )
             }
-
         }
     }
-
 }
+
 
 @Preview
 @Composable
