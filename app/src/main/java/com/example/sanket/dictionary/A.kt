@@ -6,33 +6,24 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Card
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -71,68 +62,9 @@ fun A(navController: NavHostController) {
                 .background(color = Color.Transparent)
                 .verticalScroll(scrollState)
         ) {
-            Text(text = stringResource(id = R.string.abdomen),
-                modifier = Modifier
-                    .padding(20.dp)
-                    .clickable {
-                        showWord = "abdomen"
-                    },
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
-            Text(text = stringResource(id = R.string.above),
-                modifier = Modifier
-                    .padding(20.dp, 60.dp)
-                    .clickable {
-                        showWord = "above"
-                    },
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
-            Text(text = stringResource(id = R.string.abolish),
-                modifier = Modifier.padding(20.dp, 100.dp),
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
-            Text(text = stringResource(id = R.string.about),
-                modifier = Modifier.padding(20.dp, 140.dp),
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
-            Text(text = stringResource(id = R.string.absorb),
-                modifier = Modifier.padding(20.dp, 180.dp),
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
-            Text(text = stringResource(id = R.string.abuse),
-                modifier = Modifier.padding(20.dp, 220.dp),
-                style = TextStyle(
-                    fontSize = 25.sp,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(94, 48, 35),
-                ),
-            )
+            Dic_Words(a_words = a_words) { word ->
+                showWord = word
+            }
         }
 
         Box(
@@ -140,34 +72,46 @@ fun A(navController: NavHostController) {
                 .padding(top = 300.dp, bottom = 60.dp, start = 30.dp)
                 .size(350.dp, 450.dp)
         ) {
-            when (showWord) {
-                "abdomen" -> {
-                    Image(
-                        painter = painterResource(id = R.drawable.abdomen),
-                        contentDescription = "abdomen",
-                        modifier = Modifier
-                            .padding(50.dp)
-                            .size(450.dp)
-                    )
-                }
-
-                "above" -> {
-                    Image(
-                        painter = painterResource(id = R.drawable.above),
-                        contentDescription = "above",
-                        modifier = Modifier
-                            .padding(50.dp)
-                            .size(450.dp)
-                    )
-                }
+            if (showWord.isNotEmpty() && a_words.containsKey(showWord)) {
+                AsyncImage(
+                    model = a_words[showWord]!!,
+                    contentDescription = showWord,
+                    modifier = Modifier.padding(50.dp).size(450.dp)
+                )
             }
         }
     }
 }
 
+
+@Composable
+fun Dic_Words(a_words: Map<String, String>, onClick: (String) -> Unit) {
+    Column {
+        a_words.forEach { (key, value) ->
+            Text(
+                text = key,
+                modifier = Modifier
+                    .padding(vertical = 5.dp, horizontal = 20.dp)
+                    .clickable {
+                        onClick(key) // Update with the key instead of value
+                    },
+                style = TextStyle(
+                    fontSize = 25.sp,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(94, 48, 35),
+                ),
+            )
+        }
+    }
+}
+
+
+
+
 @Preview
 @Composable
 fun APreview() {
-    val navController = rememberNavController()// Obtain the context from the composition
+    val navController = rememberNavController()
     A(navController)
 }

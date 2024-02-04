@@ -1,5 +1,7 @@
 package com.example.sanket.activities
 
+import Alphabets
+import alp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,8 +29,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.sanket.R
-import com.example.sanket.data.Alphabets
-import com.example.sanket.data.alp
 
 
 @Composable
