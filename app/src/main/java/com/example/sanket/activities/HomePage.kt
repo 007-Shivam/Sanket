@@ -50,13 +50,6 @@ fun HomePage(navController: NavHostController) {
                 contentDescription = null,
                 modifier = Modifier.clickable { navController.navigate("SignDictionary") }
             )
-
-//            AsyncImage(
-//                model = "https://i.imgur.com/a7Ak3iF.jpg",
-//                contentDescription = null,
-//            )
-
-
             Text(text = stringResource(id = R.string.sign_dic),
                 style = TextStyle(
                     fontSize = 35.sp,
@@ -98,6 +91,6 @@ fun HomePage(navController: NavHostController) {
 @Preview
 @Composable
 fun HomePagePreview() {
-    val navController = rememberNavController()// Obtain the context from the composition
+    val navController = rememberNavController()
     HomePage(navController)
 }

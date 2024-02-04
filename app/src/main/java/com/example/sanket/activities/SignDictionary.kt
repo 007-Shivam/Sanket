@@ -33,34 +33,10 @@ import com.example.sanket.R
 
 @Composable
 fun SignDictionary(navController: NavHostController) {
-    val alphabetOnClickActions = listOf(
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-        { navController.navigate("A") },
-    )
+
+    val alphabetOnClickActions = alp.map { alph ->
+        { letter: String -> navController.navigate("AllDictionaryWords/$letter") } // Navigate to A composable with the selected alphabet letter
+    }
 
 
     Box() {
@@ -80,24 +56,25 @@ fun SignDictionary(navController: NavHostController) {
                 .padding(top = 20.dp)
         ) {
             itemsIndexed(alp) { index, alph ->
-                AlphabetMenu(alph, onClick =  alphabetOnClickActions[index])
+                AlphabetMenu(alph, onClick = alphabetOnClickActions[index]) // Pass the function directly
             }
-
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AlphabetMenu(alph: Alphabets, onClick: () -> Unit) {
-    Card(modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 5.dp),
-        onClick = onClick
+fun AlphabetMenu(alph: Alphabets, onClick: (String) -> Unit) {
+    Card(
+        modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 5.dp),
+        onClick = { onClick(alph.letter) }
     ) {
-        Row(modifier = Modifier
-            .fillMaxWidth()
-            .border(1.dp, color = Color.Black)
-            .background(color = Color(254, 246, 239))
-            .padding(5.dp)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, color = Color.Black)
+                .background(color = Color(254, 246, 239))
+                .padding(5.dp)
         ) {
             AsyncImage(
                 model = alph.image,
@@ -111,6 +88,7 @@ fun AlphabetMenu(alph: Alphabets, onClick: () -> Unit) {
         }
     }
 }
+
 
 @Preview
 @Composable

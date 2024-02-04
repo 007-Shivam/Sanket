@@ -222,6 +222,6 @@ fun LogIn(context: Context = LocalContext.current, navController: NavHostControl
 @Composable
 fun LogInPreview() {
     val context = LocalContext.current
-    val navController = rememberNavController()// Obtain the context from the composition
+    val navController = rememberNavController()
     LogIn(context, navController)
 }

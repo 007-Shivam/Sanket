@@ -1,4 +1,4 @@
-package com.example.sanket.dictionary
+package com.example.sanket.activities
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -34,10 +34,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.sanket.R
+import com.example.sanket.data.allWords
 
 
 @Composable
-fun A(navController: NavHostController) {
+fun AllDictionaryWords(navController: NavHostController, letter: String) {
     val scrollState = rememberScrollState()
     var showWord by remember { mutableStateOf("") }
 
@@ -62,21 +63,25 @@ fun A(navController: NavHostController) {
                 .background(color = Color.Transparent)
                 .verticalScroll(scrollState)
         ) {
-            Dic_Words(a_words = a_words) { word ->
-                showWord = word
-            }
+            Dic_Words(
+                allWords = allWords.filterKeys { it.startsWith(letter, ignoreCase = true) }, // Filter words starting with the selected letter
+                onClick = { word ->
+                    showWord = word
+                }
+            )
         }
 
         Box(
             modifier = Modifier
-                .padding(top = 300.dp, bottom = 60.dp, start = 30.dp)
-                .size(350.dp, 450.dp)
+                .padding(top = 300.dp, bottom = 60.dp, start = 30.dp, end = 30.dp)
+                .size(500.dp, 750.dp)
         ) {
-            if (showWord.isNotEmpty() && a_words.containsKey(showWord)) {
+            if (showWord.isNotEmpty() && allWords.containsKey(showWord)) {
                 AsyncImage(
-                    model = a_words[showWord]!!,
+                    model = allWords[showWord]!!,
                     contentDescription = showWord,
-                    modifier = Modifier.padding(50.dp).size(450.dp)
+                    modifier = Modifier.size(1000.dp)
+                        .padding(10.dp)
                 )
             }
         }
@@ -85,15 +90,15 @@ fun A(navController: NavHostController) {
 
 
 @Composable
-fun Dic_Words(a_words: Map<String, String>, onClick: (String) -> Unit) {
+fun Dic_Words(allWords: Map<String, String>, onClick: (String) -> Unit) {
     Column {
-        a_words.forEach { (key, value) ->
+        allWords.keys.sorted().forEach { key ->
             Text(
                 text = key,
                 modifier = Modifier
                     .padding(vertical = 5.dp, horizontal = 20.dp)
                     .clickable {
-                        onClick(key) // Update with the key instead of value
+                        onClick(key)
                     },
                 style = TextStyle(
                     fontSize = 25.sp,
@@ -109,9 +114,11 @@ fun Dic_Words(a_words: Map<String, String>, onClick: (String) -> Unit) {
 
 
 
+
 @Preview
 @Composable
-fun APreview() {
+fun AllDictionaryWordsPreview() {
     val navController = rememberNavController()
-    A(navController)
+    val letter = "a"
+    AllDictionaryWords(navController, letter)
 }

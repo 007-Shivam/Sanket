@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -19,7 +18,7 @@ import com.example.sanket.activities.SignToWord
 import com.example.sanket.activities.SignUp
 import com.example.sanket.activities.Tutorial
 import com.example.sanket.activities.WordToSign
-import com.example.sanket.dictionary.A
+import com.example.sanket.activities.AllDictionaryWords
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,9 +79,10 @@ fun MyNavigation() {
                 WordToSign(navController = currentNavController)
             }
         }
-        composable("A") {
+        composable("AllDictionaryWords/{letter}") { backStackEntry ->
+            val letter = backStackEntry.arguments?.getString("letter") ?: ""
             AppLayout(navController = navController) { currentNavController ->
-                A(navController = currentNavController)
+                AllDictionaryWords(navController = currentNavController, letter = letter)
             }
         }
     }

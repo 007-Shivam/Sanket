@@ -106,6 +106,6 @@ fun SignToWord(navController: NavHostController) {
 @Preview
 @Composable
 fun SignToWordPreview() {
-    val navController = rememberNavController()// Obtain the context from the composition
+    val navController = rememberNavController()
     SignToWord(navController)
 }
