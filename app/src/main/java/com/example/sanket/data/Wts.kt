@@ -138,5 +138,124 @@ val allWords = mapOf(
     "lamp" to "https://i.imgur.com/0mZVI6f.png",
 
 
+    //M WORDS
+    "make" to "https://i.imgur.com/vOTMrkq.png",
+    "magic" to "https://i.imgur.com/3M2xuEm.png",
+    "magnet" to "https://i.imgur.com/cI5aN4c.png",
+    "magazine" to "https://i.imgur.com/h3C6dG6.png",
+    "machine" to "https://i.imgur.com/HLSXM1x.png",
+    "mad" to "https://i.imgur.com/bcUYb6g.png",
+
+
+    //N WORDS
+    "neighbour" to "https://i.imgur.com/Ot5n2mG.png",
+    "naked" to "https://i.imgur.com/gJNHRAK.png",
+    "new" to "https://i.imgur.com/Uts4T5t.png",
+    "name" to "https://i.imgur.com/Cbr5Zv9.png",
+    "now" to "https://i.imgur.com/SqNfoK9.png",
+    "nature" to "https://i.imgur.com/5hHRSNy.png",
+
+
+    //O WORDS
+    "on" to "https://i.imgur.com/FviJm6A.png",
+    "okay" to "https://i.imgur.com/Wl9jBRw.png",
+    "old" to "https://i.imgur.com/YGyig4w.png",
+    "oil" to "https://i.imgur.com/TWBNZ1V.png",
+    "object" to "https://i.imgur.com/8NTlp4F.png",
+    "out" to "https://i.imgur.com/Kv87hdh.png",
+
+
+    //P WORDS
+    "pants" to "https://i.imgur.com/pp2raxy.png",
+    "pajamas" to "https://i.imgur.com/gZ7a6CK.png",
+    "pee" to "https://i.imgur.com/k4P3t8Q.png",
+    "pillow" to "https://i.imgur.com/gVHaOFQ.png",
+    "page" to "https://i.imgur.com/GtWryrv.png",
+    "paint" to "https://i.imgur.com/mp8BVom.png",
+
+
+    //Q WORDS
+    "question" to "https://i.imgur.com/I9EIvAf.png",
+    "queen" to "https://i.imgur.com/sInKJCG.png",
+    "quarter" to "https://i.imgur.com/4luuAJT.png",
+    "quiz" to "https://i.imgur.com/TpWRQsw.png",
+    "quiet" to "https://i.imgur.com/5n9svkV.png",
+    "quick" to "https://i.imgur.com/2ST8Uzs.png",
+
+
+    //R WORDS
+    "rain" to "https://i.imgur.com/R6kBNYo.png",
+    "rainbow" to "https://i.imgur.com/efhmiWW.png",
+    "recycle" to "https://i.imgur.com/NYX4Naz.png",
+    "refrigerator" to "https://i.imgur.com/1khV6v5.png",
+    "race" to "https://i.imgur.com/fJWSadI.png",
+    "rectangle" to "https://i.imgur.com/IbBbg4u.png",
+
+
+    //S WORDS
+    "same" to "https://i.imgur.com/QSdl5jS.png",
+    "school" to "https://i.imgur.com/mMR9nT4.png",
+    "selfie" to "https://i.imgur.com/LXpYK2x.png",
+    "shirt" to "https://i.imgur.com/LYZecyw.png",
+    "scissors" to "https://i.imgur.com/TdNB6YP.png",
+    "science" to "https://i.imgur.com/GDWZCTU.png",
     "space" to "https://i.imgur.com/HFTKyDL.jpg",
+
+
+    //T WORDS
+    "thin" to "https://i.imgur.com/UxxnAlM.png",
+    "team" to "https://i.imgur.com/DQyftYS.png",
+    "thirsty" to "https://i.imgur.com/UxdWe5H.png",
+    "taxi" to "https://i.imgur.com/LVsWHdg.png",
+    "talk" to "https://i.imgur.com/WROUmsj.png",
+    "table" to "https://i.imgur.com/Y8wAPqF.png",
+
+
+    //U WORDS
+    "uniform" to "https://i.imgur.com/99bsEAX.png",
+    "use" to "https://i.imgur.com/lAqpwXz.png",
+    "up" to "https://i.imgur.com/fpYUWw3.png",
+    "ugly" to "https://i.imgur.com/aSzlk4n.png",
+    "uncle" to "https://i.imgur.com/wlvzqO2.png",
+    "understand" to "https://i.imgur.com/P8p1g34.png",
+
+
+    //V WORDS
+    "visit" to "https://i.imgur.com/KqyXOzv.png",
+    "valley" to "https://i.imgur.com/gYCNRuC.png",
+    "vacuum" to "https://i.imgur.com/tB2wa2x.png",
+    "vehicle" to "https://i.imgur.com/0rzES1H.png",
+    "volleyball" to "https://i.imgur.com/gYLdkKU.png",
+    "vegetable" to "https://i.imgur.com/WU1ubHV.png",
+
+
+    //W WORDS
+    "wallet" to "https://i.imgur.com/iELSHib.png",
+    "what" to "https://i.imgur.com/zRA5cu6.png",
+    "welcome" to "https://i.imgur.com/SJM3II4.png",
+    "wet" to "https://i.imgur.com/0zWxGIU.png",
+    "wall" to "https://i.imgur.com/TIKC4NJ.png",
+    "walk" to "https://i.imgur.com/Bts9NZx.png",
+
+
+    //X WORDS
+    "xylophone" to "https://i.imgur.com/K9S07qv.png",
+    "xerox" to "https://i.imgur.com/IuriS7o.png",
+    "x-ray" to "https://i.imgur.com/mTYQTRG.png",
+
+
+    //Y WORDS
+    "yesterday" to "https://i.imgur.com/o2I6KR6.png",
+    "yell" to "https://i.imgur.com/yvKmg7B.png",
+    "yellow" to "https://i.imgur.com/Jjz0nVv.png",
+    "yes" to "https://i.imgur.com/2Ny8ccQ.png",
+    "young" to "https://i.imgur.com/YoLdWn1.png",
+    "yawn" to "https://i.imgur.com/INzwFn3.png",
+
+
+    //Z WORDS
+    "zebra" to "https://i.imgur.com/RfchmZF.png",
+    "zipper" to "https://i.imgur.com/WuuSwfx.png",
+    "zoo" to "https://i.imgur.com/UxdWe5H.png"
+
 )

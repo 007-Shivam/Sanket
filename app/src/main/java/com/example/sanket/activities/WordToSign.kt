@@ -1,7 +1,6 @@
 package com.example.sanket.activities
 
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -111,7 +109,7 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
                         ).show()
                     } else {
                         val inputText =
-                            wts.text.lowercase(Locale.ROOT) // Convert input text to lowercase
+                            wts.text.lowercase(Locale.ROOT)
                         imageUrl = allWords[inputText]
                         if (imageUrl != null) {
                             showImg = true

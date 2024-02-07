@@ -1,6 +1,10 @@
 package com.example.sanket.activities
 
+import android.content.Intent
+import android.net.Uri
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -28,8 +33,14 @@ import androidx.navigation.compose.rememberNavController
 import com.example.sanket.R
 
 
+private fun openSocialLink(context: ComponentActivity) {
+    val SocialUri = Uri.parse("https://github.com/007-Shivam/Sanket")
+    val intent = Intent(Intent.ACTION_VIEW, SocialUri)
+    context.startActivity(intent)
+}
 @Composable
 fun Contact(navController: NavHostController) {
+    val context = LocalContext.current
 
     Box() {
         Image(
@@ -47,7 +58,7 @@ fun Contact(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 40.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
@@ -95,7 +106,7 @@ fun Contact(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 22.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
@@ -127,7 +138,7 @@ fun Contact(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 22.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
@@ -159,7 +170,7 @@ fun Contact(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 22.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
@@ -175,7 +186,7 @@ fun Contact(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 22.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
@@ -189,7 +200,7 @@ fun Contact(navController: NavHostController) {
 
             item {
                 Row(modifier = Modifier
-                    .padding(start = 20.dp, end = 20.dp, top = 10.dp)) {
+                    .padding(start = 18.dp, end = 20.dp, top = 10.dp)) {
                     Image(
                         painter = painterResource(id = R.drawable.instagram1),
                         contentDescription = "logo",
@@ -197,7 +208,10 @@ fun Contact(navController: NavHostController) {
                             .padding(top = 20.dp, bottom = 0.dp, start = 50.dp)
                             .size(width = 26.dp, height = 26.dp)
                             .fillMaxWidth()
-                            .wrapContentWidth(align = Alignment.Start),
+                            .wrapContentWidth(align = Alignment.Start)
+                            .clickable {
+                                openSocialLink(context as ComponentActivity)
+                            },
                     )
                     Image(
                         painter = painterResource(id = R.drawable.linkedin1),
@@ -206,7 +220,10 @@ fun Contact(navController: NavHostController) {
                             .padding(top = 20.dp, bottom = 0.dp, start = 55.dp)
                             .size(width = 26.dp, height = 26.dp)
                             .fillMaxWidth()
-                            .wrapContentWidth(align = Alignment.Start),
+                            .wrapContentWidth(align = Alignment.Start)
+                            .clickable {
+                                openSocialLink(context as ComponentActivity)
+                            },
                     )
                     Image(
                         painter = painterResource(id = R.drawable.twitter),
@@ -215,16 +232,22 @@ fun Contact(navController: NavHostController) {
                             .padding(top = 20.dp, bottom = 0.dp, start = 60.dp)
                             .size(width = 26.dp, height = 26.dp)
                             .fillMaxWidth()
-                            .wrapContentWidth(align = Alignment.Start),
+                            .wrapContentWidth(align = Alignment.Start)
+                            .clickable {
+                                openSocialLink(context as ComponentActivity)
+                            },
                     )
                     Image(
                         painter = painterResource(id = R.drawable.whatsapp),
                         contentDescription = "logo",
                         modifier = Modifier
-                            .padding(top = 20.dp, bottom = 0.dp, start = 65.dp)
-                            .size(width = 26.dp, height = 26.dp)
+                            .padding(top = 15.dp, bottom = 0.dp, start = 60.dp)
+                            .size(width = 51.dp, height = 51.dp)
                             .fillMaxWidth()
-                            .wrapContentWidth(align = Alignment.Start),
+                            .wrapContentWidth(align = Alignment.Start)
+                            .clickable {
+                                openSocialLink(context as ComponentActivity)
+                            },
                     )
                 }
 

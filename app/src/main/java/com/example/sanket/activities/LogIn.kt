@@ -44,6 +44,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -78,7 +79,7 @@ fun LogIn(context: Context = LocalContext.current, navController: NavHostControl
                 painter = painterResource(id = R.drawable.sign_logo),
                 contentDescription = "logo",
                 modifier = Modifier
-                    .padding(top = 50.dp, bottom = 20.dp, start = 20.dp)
+                    .padding(top = 30.dp, bottom = 20.dp, start = 20.dp)
                     .fillMaxWidth()
                     .wrapContentWidth(align = Alignment.Start),
             )
@@ -119,8 +120,7 @@ fun LogIn(context: Context = LocalContext.current, navController: NavHostControl
                         width = 3.dp,
                         brush = Brush.radialGradient(listOf(Color.Black, Color.White)),
                         shape = RoundedCornerShape(50.dp)
-                    )
-                    .padding(top = 10.dp),
+                    ),
                 keyboardOptions = KeyboardOptions.Default.copy(
                     keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Done
@@ -211,7 +211,8 @@ fun LogIn(context: Context = LocalContext.current, navController: NavHostControl
                 },
             ) {
                 Text(text = stringResource(id = R.string.no_acc),
-                    color = Color(94, 48, 35)
+                    color = Color(94, 48, 35),
+                    textAlign = TextAlign.Center
                 )
             }
         }

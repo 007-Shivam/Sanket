@@ -46,11 +46,12 @@ fun About(navController: NavHostController) {
                     style = TextStyle(
                         fontSize = 40.sp,
                         fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.ExtraBold,
                         color = Color(94, 48, 35),
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(top = 20.dp)
                         .align(Alignment.TopCenter)
                         .border(
                             width = 0.dp,
@@ -72,6 +73,7 @@ fun About(navController: NavHostController) {
                         fontWeight = FontWeight.Normal,
                         color = Color(94, 48, 35),
                     ),
+                    textAlign = TextAlign.Center
                 )
             }
         }

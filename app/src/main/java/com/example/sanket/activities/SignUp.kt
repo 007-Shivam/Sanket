@@ -95,7 +95,8 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
 
         LazyColumn(modifier = Modifier
             .align(Alignment.Center)
-            .padding(top = 180.dp, start = 60.dp, end = 40.dp))
+            .padding(top = 150.dp, start = 40.dp)
+        )
         {
             item {
                 TextField(
@@ -379,10 +380,15 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                     },
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
-                        .padding(bottom = 180.dp, start = 40.dp)
+                        .padding(bottom = 30.dp, start = 40.dp)
                 ) {
                     Text(text = stringResource(id = R.string.hv_acc),
-                        color = Color(94, 48, 35)
+                        color = Color(94, 48, 35),
+                        textAlign = TextAlign.Center,
+                        style = TextStyle(
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold
+                        )
                     )
                 }
             }

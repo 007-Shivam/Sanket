@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -77,6 +78,18 @@ fun AllDictionaryWords(navController: NavHostController, letter: String) {
                 .size(500.dp, 750.dp)
         ) {
             if (showWord.isNotEmpty() && allWords.containsKey(showWord)) {
+                Text(
+                    text = showWord.uppercase(),
+                    modifier = Modifier.align(Alignment.TopCenter)
+                        .padding(bottom = 10.dp),
+                    style = TextStyle(
+                        fontSize = 25.sp,
+                        fontFamily = FontFamily.Serif,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(94, 48, 35),
+                    ),
+                )
+
                 AsyncImage(
                     model = allWords[showWord]!!,
                     contentDescription = showWord,

@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "SignDictionary") {
+    NavHost(navController = navController, startDestination = "Tutorial") {
         composable("HomePage") {
             AppLayout(navController = navController) { currentNavController ->
                 HomePage(navController = currentNavController)
