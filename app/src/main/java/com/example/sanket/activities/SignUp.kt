@@ -351,7 +351,7 @@ fun SignUp(context: Context = LocalContext.current, navController: NavController
                                     && gender.text==""
                                     && password.text==""
                                     && confirm.text==""
-                            && privacyPolicy
+                            && !privacyPolicy
                         ){
                             Toast.makeText(context,
                                 "Please fill all text fields.",

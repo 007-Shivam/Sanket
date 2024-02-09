@@ -28,234 +28,685 @@ val allWords = mapOf(
     "y" to "https://i.imgur.com/H9ODO4j.png",
     "z" to "https://i.imgur.com/C5EREMY.png",
 
-
-    //A WORDS
-    "across" to "https://i.imgur.com/bZDYuUc.png",
-    "afraid" to "https://i.imgur.com/tyCNdew.png",
-    "adult" to "https://i.imgur.com/egXsWWa.png",
-    "above" to "https://i.imgur.com/JXzE8WO.png",
-    "add" to "https://i.imgur.com/Kk7ArRA.png",
-    "accident" to "https://i.imgur.com/GZCQPpa.png",
-
-
-    //B WORDS
-    "bacon" to "https://i.imgur.com/a1h0WGh.png",
-    "bad" to "https://i.imgur.com/rV8PV94.png",
-    "backpack" to "https://i.imgur.com/rmBHfy7.png",
-    "baby" to "https://i.imgur.com/DzpSJmu.png",
-    "back" to "https://i.imgur.com/zJqcZY8.png",
-    "babysitter" to "https://i.imgur.com/mP5aHsX.png",
-
-
-    //C WORDS
-    "can" to "https://i.imgur.com/9WePsxI.png",
-    "camera" to "https://i.imgur.com/DCt2Qdl.png",
-    "cake" to "https://i.imgur.com/JZqpjms.png",
-    "call" to "https://i.imgur.com/wm3gVou.png",
-    "calender" to "https://i.imgur.com/bb3a7E2.png",
-    "cage" to "https://i.imgur.com/xSCrwby.png",
-
-
-    //D WORDS
-    "dark" to "https://i.imgur.com/K0875Vx.png",
-    "daughter" to "https://i.imgur.com/iH2BLW4.png",
-    "day" to "https://i.imgur.com/45WNjgx.png",
-    "dance" to "https://i.imgur.com/vYY1hwg.png",
-    "daddy" to "https://i.imgur.com/gsObfTu.png",
-    "deep" to "https://i.imgur.com/YY4W3gf.png",
+    // A WORDS
+    "across" to mapOf(
+        "imageUrl" to "https://i.imgur.com/bZDYuUc.png",
+        "definition" to "on the other side of"
+    ),
+    "afraid" to mapOf(
+        "imageUrl" to "https://i.imgur.com/tyCNdew.png",
+        "definition" to "feeling fear or anxiety"
+    ),
+    "adult" to mapOf(
+        "imageUrl" to "https://i.imgur.com/egXsWWa.png",
+        "definition" to "fully grown or developed"
+    ),
+    "above" to mapOf(
+        "imageUrl" to "https://i.imgur.com/JXzE8WO.png",
+        "definition" to "higher than something else"
+    ),
+    "add" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Kk7ArRA.png",
+        "definition" to "combine or join together"
+    ),
+    "accident" to mapOf(
+        "imageUrl" to "https://i.imgur.com/GZCQPpa.png",
+        "definition" to "an unfortunate event"
+    ),
 
 
-    //E WORDS
-    "earphones" to "https://i.imgur.com/njuXj2y.png",
-    "earring" to "https://i.imgur.com/0eYtsQ7.png",
-    "earth" to "https://i.imgur.com/7yjBf1R.png",
-    "ear" to "https://i.imgur.com/VV0QVOI.png",
-    "eagle" to "https://i.imgur.com/dbY69ve.png",
-    "easy" to "https://i.imgur.com/cUXlnWW.png",
+    // B WORDS
+    "bacon" to mapOf(
+        "imageUrl" to "https://i.imgur.com/a1h0WGh.png",
+        "definition" to "cured meat from pig"
+    ),
+    "bad" to mapOf(
+        "imageUrl" to "https://i.imgur.com/rV8PV94.png",
+        "definition" to "of poor quality or low standard"
+    ),
+    "backpack" to mapOf(
+        "imageUrl" to "https://i.imgur.com/rmBHfy7.png",
+        "definition" to "a bag carried on the back"
+    ),
+    "baby" to mapOf(
+        "imageUrl" to "https://i.imgur.com/DzpSJmu.png",
+        "definition" to "young human"
+    ),
+    "back" to mapOf(
+        "imageUrl" to "https://i.imgur.com/zJqcZY8.png",
+        "definition" to "rear part of the body"
+    ),
+    "babysitter" to mapOf(
+        "imageUrl" to "https://i.imgur.com/mP5aHsX.png",
+        "definition" to "person who cares for children"
+    ),
 
 
-    //F WORDS
-    "family" to "https://i.imgur.com/hHkiW8s.png",
-    "far" to "https://i.imgur.com/g6L4hcv.png",
-    "feel" to "https://i.imgur.com/W4Mai9p.png",
-    "face" to "https://i.imgur.com/kHVxutG.png",
-    "fan" to "https://i.imgur.com/aIgmUO0.png",
-    "fair" to "https://i.imgur.com/Zfm9WoE.png",
+    // C WORDS
+    "can" to mapOf(
+        "imageUrl" to "https://i.imgur.com/9WePsxI.png",
+        "definition" to "able to do something"
+    ),
+    "camera" to mapOf(
+        "imageUrl" to "https://i.imgur.com/DCt2Qdl.png",
+        "definition" to "device for taking photographs"
+    ),
+    "cake" to mapOf(
+        "imageUrl" to "https://i.imgur.com/JZqpjms.png",
+        "definition" to "sweet baked dessert"
+    ),
+    "call" to mapOf(
+        "imageUrl" to "https://i.imgur.com/wm3gVou.png",
+        "definition" to "to communicate with someone"
+    ),
+    "calendar" to mapOf(
+        "imageUrl" to "https://i.imgur.com/bb3a7E2.png",
+        "definition" to "a system for organizing days"
+    ),
+    "cage" to mapOf(
+        "imageUrl" to "https://i.imgur.com/xSCrwby.png",
+        "definition" to "enclosed structure for confining"
+    ),
 
 
-    //G WORDS
-    "gas" to "https://i.imgur.com/QEBZXed.png",
-    "garbage" to "https://i.imgur.com/0O8Cr4s.png",
-    "garden" to "https://i.imgur.com/kfrPt7h.png",
-    "garage" to "https://i.imgur.com/SX69ZqE.png",
-    "game" to "https://i.imgur.com/XI7YcM3.png",
-    "gate" to "https://i.imgur.com/1a3NE0D.png",
+    // D WORDS
+    "dark" to mapOf(
+        "imageUrl" to "https://i.imgur.com/K0875Vx.png",
+        "definition" to "absence of light"
+    ),
+    "daughter" to mapOf(
+        "imageUrl" to "https://i.imgur.com/iH2BLW4.png",
+        "definition" to "female child"
+    ),
+    "day" to mapOf(
+        "imageUrl" to "https://i.imgur.com/45WNjgx.png",
+        "definition" to "a period of 24 hours"
+    ),
+    "dance" to mapOf(
+        "imageUrl" to "https://i.imgur.com/vYY1hwg.png",
+        "definition" to "move rhythmically to music"
+    ),
+    "daddy" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gsObfTu.png",
+        "definition" to "informal term for father"
+    ),
+    "deep" to mapOf(
+        "imageUrl" to "https://i.imgur.com/YY4W3gf.png",
+        "definition" to "extending far down from the top"
+    ),
 
 
-    //H WORDS
-    "hall" to "https://i.imgur.com/yyHJvvk.png",
-    "hello" to "https://i.imgur.com/DFAR89G.png",
-    "hard" to "https://i.imgur.com/EFpvcP6.png",
-    "hair" to "https://i.imgur.com/a3QOT7e.png",
-    "help" to "https://i.imgur.com/WNeJyn5.png",
-    "happy" to "https://i.imgur.com/t7mWKjd.png",
+    // E WORDS
+    "earphones" to mapOf(
+        "imageUrl" to "https://i.imgur.com/njuXj2y.png",
+        "definition" to "device for listening to audio"
+    ),
+    "earring" to mapOf(
+        "imageUrl" to "https://i.imgur.com/0eYtsQ7.png",
+        "definition" to "ornamental jewelry worn on the ear"
+    ),
+    "earth" to mapOf(
+        "imageUrl" to "https://i.imgur.com/7yjBf1R.png",
+        "definition" to "third planet from the sun"
+    ),
+    "ear" to mapOf(
+        "imageUrl" to "https://i.imgur.com/VV0QVOI.png",
+        "definition" to "organ of hearing"
+    ),
+    "eagle" to mapOf(
+        "imageUrl" to "https://i.imgur.com/dbY69ve.png",
+        "definition" to "large bird of prey"
+    ),
+    "easy" to mapOf(
+        "imageUrl" to "https://i.imgur.com/cUXlnWW.png",
+        "definition" to "not difficult"
+    ),
 
 
-    //I WORDS
-    "island" to "https://i.imgur.com/NcIe3am.png",
-    "itch" to "https://i.imgur.com/xXc2GMr.png",
-    "ice" to "https://i.imgur.com/OcmY9GC.png",
-    "insect" to "https://i.imgur.com/5voAP7d.png",
-    "important" to "https://i.imgur.com/IzDTorg.png",
-    "idea" to "https://i.imgur.com/BSzFMHR.png",
-    "in" to "https://i.imgur.com/ZhAFzwK.png",
+    // F WORDS
+    "family" to mapOf(
+        "imageUrl" to "https://i.imgur.com/hHkiW8s.png",
+        "definition" to "group of related individuals"
+    ),
+    "far" to mapOf(
+        "imageUrl" to "https://i.imgur.com/g6L4hcv.png",
+        "definition" to "distant in space or time"
+    ),
+    "feel" to mapOf(
+        "imageUrl" to "https://i.imgur.com/W4Mai9p.png",
+        "definition" to "perceive by touch or emotion"
+    ),
+    "face" to mapOf(
+        "imageUrl" to "https://i.imgur.com/kHVxutG.png",
+        "definition" to "front part of the head"
+    ),
+    "fan" to mapOf(
+        "imageUrl" to "https://i.imgur.com/aIgmUO0.png",
+        "definition" to "device to create airflow"
+    ),
+    "fair" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Zfm9WoE.png",
+        "definition" to "treating people equally"
+    ),
 
 
-    //J WORDS
-    "job" to "https://i.imgur.com/qqamXbh.png",
-    "janitor" to "https://i.imgur.com/e6ab3eQ.png",
-    "jam" to "https://i.imgur.com/kSUSDJh.png",
-    "jar" to "https://i.imgur.com/vVUtRDY.png",
-    "jacket" to "https://i.imgur.com/JYxCWmm.png",
-    "happy" to "https://i.imgur.com/t7mWKjd.png",
+    // G WORDS
+    "gas" to mapOf(
+        "imageUrl" to "https://i.imgur.com/QEBZXed.png",
+        "definition" to "substance in a gaseous state"
+    ),
+    "garbage" to mapOf(
+        "imageUrl" to "https://i.imgur.com/0O8Cr4s.png",
+        "definition" to "waste material"
+    ),
+    "garden" to mapOf(
+        "imageUrl" to "https://i.imgur.com/kfrPt7h.png",
+        "definition" to "area with plants and flowers"
+    ),
+    "garage" to mapOf(
+        "imageUrl" to "https://i.imgur.com/SX69ZqE.png",
+        "definition" to "building for parking vehicles"
+    ),
+    "game" to mapOf(
+        "imageUrl" to "https://i.imgur.com/XI7YcM3.png",
+        "definition" to "activity for amusement"
+    ),
+    "gate" to mapOf(
+        "imageUrl" to "https://i.imgur.com/1a3NE0D.png",
+        "definition" to "barrier to close an opening"
+    ),
 
 
-    //K WORDS
-    "kick" to "https://i.imgur.com/makx9xu.png",
-    "kid" to "https://i.imgur.com/Ais20r4.png",
-    "kite" to "https://i.imgur.com/SJlabYa.png",
-    "ketchup" to "https://i.imgur.com/GxwNZcW.png",
-    "key" to "https://i.imgur.com/Mgcxp5A.png",
-    "kangaroo" to "https://i.imgur.com/QSr3gjO.png",
+    // H WORDS
+    "hall" to mapOf(
+        "imageUrl" to "https://i.imgur.com/yyHJvvk.png",
+        "definition" to "large room or building"
+    ),
+    "hello" to mapOf(
+        "imageUrl" to "https://i.imgur.com/DFAR89G.png",
+        "definition" to "greeting or salutation"
+    ),
+    "hard" to mapOf(
+        "imageUrl" to "https://i.imgur.com/EFpvcP6.png",
+        "definition" to "difficult to do or understand"
+    ),
+    "hair" to mapOf(
+        "imageUrl" to "https://i.imgur.com/a3QOT7e.png",
+        "definition" to "threadlike strands growing from skin"
+    ),
+    "help" to mapOf(
+        "imageUrl" to "https://i.imgur.com/WNeJyn5.png",
+        "definition" to "to give assistance"
+    ),
+    "happy" to mapOf(
+        "imageUrl" to "https://i.imgur.com/t7mWKjd.png",
+        "definition" to "feeling or showing pleasure"
+    ),
 
 
-    //L WORDS
-    "lawn" to "https://i.imgur.com/ZLBJgBj.png",
-    "lake" to "https://i.imgur.com/SvgEEtF.png",
-    "ladder" to "https://i.imgur.com/ik9dIfn.png",
-    "leaf" to "https://i.imgur.com/HUfoTG2.png",
-    "lazy" to "https://i.imgur.com/qr1PT4e.png",
-    "lamp" to "https://i.imgur.com/0mZVI6f.png",
+    // I WORDS
+    "island" to mapOf(
+        "imageUrl" to "https://i.imgur.com/NcIe3am.png",
+        "definition" to "land surrounded by water"
+    ),
+    "itch" to mapOf(
+        "imageUrl" to "https://i.imgur.com/xXc2GMr.png",
+        "definition" to "an irritating sensation"
+    ),
+    "ice" to mapOf(
+        "imageUrl" to "https://i.imgur.com/OcmY9GC.png",
+        "definition" to "frozen water"
+    ),
+    "insect" to mapOf(
+        "imageUrl" to "https://i.imgur.com/5voAP7d.png",
+        "definition" to "small arthropod animal"
+    ),
+    "important" to mapOf(
+        "imageUrl" to "https://i.imgur.com/IzDTorg.png",
+        "definition" to "of great significance"
+    ),
+    "idea" to mapOf(
+        "imageUrl" to "https://i.imgur.com/BSzFMHR.png",
+        "definition" to "a thought or suggestion"
+    ),
+    "in" to mapOf(
+        "imageUrl" to "https://i.imgur.com/ZhAFzwK.png",
+        "definition" to "within a space or time"
+    ),
 
 
-    //M WORDS
-    "make" to "https://i.imgur.com/vOTMrkq.png",
-    "magic" to "https://i.imgur.com/3M2xuEm.png",
-    "magnet" to "https://i.imgur.com/cI5aN4c.png",
-    "magazine" to "https://i.imgur.com/h3C6dG6.png",
-    "machine" to "https://i.imgur.com/HLSXM1x.png",
-    "mad" to "https://i.imgur.com/bcUYb6g.png",
+    // J WORDS
+    "job" to mapOf(
+        "imageUrl" to "https://i.imgur.com/qqamXbh.png",
+        "definition" to "task or work done for payment"
+    ),
+    "janitor" to mapOf(
+        "imageUrl" to "https://i.imgur.com/e6ab3eQ.png",
+        "definition" to "person who cleans"
+    ),
+    "jam" to mapOf(
+        "imageUrl" to "https://i.imgur.com/kSUSDJh.png",
+        "definition" to "sweet spread made from fruit"
+    ),
+    "jar" to mapOf(
+        "imageUrl" to "https://i.imgur.com/vVUtRDY.png",
+        "definition" to "glass container with lid"
+    ),
+    "jacket" to mapOf(
+        "imageUrl" to "https://i.imgur.com/JYxCWmm.png",
+        "definition" to "outer garment worn on upper body"
+    ),
 
 
-    //N WORDS
-    "neighbour" to "https://i.imgur.com/Ot5n2mG.png",
-    "naked" to "https://i.imgur.com/gJNHRAK.png",
-    "new" to "https://i.imgur.com/Uts4T5t.png",
-    "name" to "https://i.imgur.com/Cbr5Zv9.png",
-    "now" to "https://i.imgur.com/SqNfoK9.png",
-    "nature" to "https://i.imgur.com/5hHRSNy.png",
+    // K WORDS
+    "kick" to mapOf(
+        "imageUrl" to "https://i.imgur.com/makx9xu.png",
+        "definition" to "to strike with the foot"
+    ),
+    "kid" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Ais20r4.png",
+        "definition" to "young person or child"
+    ),
+    "kite" to mapOf(
+        "imageUrl" to "https://i.imgur.com/SJlabYa.png",
+        "definition" to "toy that flies in the wind"
+    ),
+    "ketchup" to mapOf(
+        "imageUrl" to "https://i.imgur.com/GxwNZcW.png",
+        "definition" to "sauce made from tomatoes"
+    ),
+    "key" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Mgcxp5A.png",
+        "definition" to "device for opening locks"
+    ),
+    "kangaroo" to mapOf(
+        "imageUrl" to "https://i.imgur.com/QSr3gjO.png",
+        "definition" to "large marsupial from Australia"
+    ),
 
 
-    //O WORDS
-    "on" to "https://i.imgur.com/FviJm6A.png",
-    "okay" to "https://i.imgur.com/Wl9jBRw.png",
-    "old" to "https://i.imgur.com/YGyig4w.png",
-    "oil" to "https://i.imgur.com/TWBNZ1V.png",
-    "object" to "https://i.imgur.com/8NTlp4F.png",
-    "out" to "https://i.imgur.com/Kv87hdh.png",
+    // L WORDS
+    "lawn" to mapOf(
+        "imageUrl" to "https://i.imgur.com/ZLBJgBj.png",
+        "definition" to "area of grass in a yard"
+    ),
+    "lake" to mapOf(
+        "imageUrl" to "https://i.imgur.com/SvgEEtF.png",
+        "definition" to "large body of water"
+    ),
+    "ladder" to mapOf(
+        "imageUrl" to "https://i.imgur.com/ik9dIfn.png",
+        "definition" to "device for climbing"
+    ),
+    "leaf" to mapOf(
+        "imageUrl" to "https://i.imgur.com/HUfoTG2.png",
+        "definition" to "thin flat part of a plant"
+    ),
+    "lazy" to mapOf(
+        "imageUrl" to "https://i.imgur.com/qr1PT4e.png",
+        "definition" to "unwilling to work or move"
+    ),
+    "lamp" to mapOf(
+        "imageUrl" to "https://i.imgur.com/0mZVI6f.png",
+        "definition" to "device to produce light"
+    ),
 
 
-    //P WORDS
-    "pants" to "https://i.imgur.com/pp2raxy.png",
-    "pajamas" to "https://i.imgur.com/gZ7a6CK.png",
-    "pee" to "https://i.imgur.com/k4P3t8Q.png",
-    "pillow" to "https://i.imgur.com/gVHaOFQ.png",
-    "page" to "https://i.imgur.com/GtWryrv.png",
-    "paint" to "https://i.imgur.com/mp8BVom.png",
+    // M WORDS
+    "make" to mapOf(
+        "imageUrl" to "https://i.imgur.com/vOTMrkq.png",
+        "definition" to "to create or construct"
+    ),
+    "magic" to mapOf(
+        "imageUrl" to "https://i.imgur.com/3M2xuEm.png",
+        "definition" to "supernatural phenomenon"
+    ),
+    "magnet" to mapOf(
+        "imageUrl" to "https://i.imgur.com/cI5aN4c.png",
+        "definition" to "object that attracts iron"
+    ),
+    "magazine" to mapOf(
+        "imageUrl" to "https://i.imgur.com/h3C6dG6.png",
+        "definition" to "publication with articles"
+    ),
+    "machine" to mapOf(
+        "imageUrl" to "https://i.imgur.com/HLSXM1x.png",
+        "definition" to "mechanical device"
+    ),
+    "mad" to mapOf(
+        "imageUrl" to "https://i.imgur.com/bcUYb6g.png",
+        "definition" to "mentally disturbed"
+    ),
 
 
-    //Q WORDS
-    "question" to "https://i.imgur.com/I9EIvAf.png",
-    "queen" to "https://i.imgur.com/sInKJCG.png",
-    "quarter" to "https://i.imgur.com/4luuAJT.png",
-    "quiz" to "https://i.imgur.com/TpWRQsw.png",
-    "quiet" to "https://i.imgur.com/5n9svkV.png",
-    "quick" to "https://i.imgur.com/2ST8Uzs.png",
+    // N WORDS
+    "neighbour" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Ot5n2mG.png",
+        "definition" to "person living nearby"
+    ),
+    "naked" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gJNHRAK.png",
+        "definition" to "not wearing clothes"
+    ),
+    "new" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Uts4T5t.png",
+        "definition" to "recently made or produced"
+    ),
+    "name" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Cbr5Zv9.png",
+        "definition" to "a word used to identify someone"
+    ),
+    "now" to mapOf(
+        "imageUrl" to "https://i.imgur.com/SqNfoK9.png",
+        "definition" to "at this present moment"
+    ),
+    "nature" to mapOf(
+        "imageUrl" to "https://i.imgur.com/5hHRSNy.png",
+        "definition" to "physical world and its phenomena"
+    ),
 
 
-    //R WORDS
-    "rain" to "https://i.imgur.com/R6kBNYo.png",
-    "rainbow" to "https://i.imgur.com/efhmiWW.png",
-    "recycle" to "https://i.imgur.com/NYX4Naz.png",
-    "refrigerator" to "https://i.imgur.com/1khV6v5.png",
-    "race" to "https://i.imgur.com/fJWSadI.png",
-    "rectangle" to "https://i.imgur.com/IbBbg4u.png",
+    // O WORDS
+    "on" to mapOf(
+        "imageUrl" to "https://i.imgur.com/FviJm6A.png",
+        "definition" to "positioned above or covering"
+    ),
+    "okay" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Wl9jBRw.png",
+        "definition" to "acceptable or satisfactory"
+    ),
+    "old" to mapOf(
+        "imageUrl" to "https://i.imgur.com/YGyig4w.png",
+        "definition" to "having existed for a long time"
+    ),
+    "oil" to mapOf(
+        "imageUrl" to "https://i.imgur.com/TWBNZ1V.png",
+        "definition" to "viscous liquid"
+    ),
+    "object" to mapOf(
+        "imageUrl" to "https://i.imgur.com/8NTlp4F.png",
+        "definition" to "a material thing"
+    ),
+    "out" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Kv87hdh.png",
+        "definition" to "outside or outdoors"
+    ),
 
 
-    //S WORDS
-    "same" to "https://i.imgur.com/QSdl5jS.png",
-    "school" to "https://i.imgur.com/mMR9nT4.png",
-    "selfie" to "https://i.imgur.com/LXpYK2x.png",
-    "shirt" to "https://i.imgur.com/LYZecyw.png",
-    "scissors" to "https://i.imgur.com/TdNB6YP.png",
-    "science" to "https://i.imgur.com/GDWZCTU.png",
-    "space" to "https://i.imgur.com/HFTKyDL.jpg",
+    // P WORDS
+    "pants" to mapOf(
+        "imageUrl" to "https://i.imgur.com/pp2raxy.png",
+        "definition" to "clothing for the lower body"
+    ),
+    "pajamas" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gZ7a6CK.png",
+        "definition" to "loose-fitting nightclothes"
+    ),
+    "pee" to mapOf(
+        "imageUrl" to "https://i.imgur.com/k4P3t8Q.png",
+        "definition" to "to urinate"
+    ),
+    "pillow" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gVHaOFQ.png",
+        "definition" to "cushion for the head"
+    ),
+    "page" to mapOf(
+        "imageUrl" to "https://i.imgur.com/GtWryrv.png",
+        "definition" to "sheet of paper"
+    ),
+    "paint" to mapOf(
+        "imageUrl" to "https://i.imgur.com/mp8BVom.png",
+        "definition" to "pigmented liquid"
+    ),
 
 
-    //T WORDS
-    "thin" to "https://i.imgur.com/UxxnAlM.png",
-    "team" to "https://i.imgur.com/DQyftYS.png",
-    "thirsty" to "https://i.imgur.com/UxdWe5H.png",
-    "taxi" to "https://i.imgur.com/LVsWHdg.png",
-    "talk" to "https://i.imgur.com/WROUmsj.png",
-    "table" to "https://i.imgur.com/Y8wAPqF.png",
+    // Q WORDS
+    "question" to mapOf(
+        "imageUrl" to "https://i.imgur.com/I9EIvAf.png",
+        "definition" to "inquiry or query"
+    ),
+    "queen" to mapOf(
+        "imageUrl" to "https://i.imgur.com/sInKJCG.png",
+        "definition" to "female monarch"
+    ),
+    "quarter" to mapOf(
+        "imageUrl" to "https://i.imgur.com/pzWxg5m.png",
+        "definition" to "one-fourth part"
+    ),
+    "quack" to mapOf(
+        "imageUrl" to "https://i.imgur.com/bYrNS2J.png",
+        "definition" to "noise made by a duck"
+    ),
+    "quick" to mapOf(
+        "imageUrl" to "https://i.imgur.com/pWx6ZLW.png",
+        "definition" to "fast or rapid"
+    ),
+    "quiet" to mapOf(
+        "imageUrl" to "https://i.imgur.com/rAwb2rL.png",
+        "definition" to "making little or no noise"
+    ),
 
 
-    //U WORDS
-    "uniform" to "https://i.imgur.com/99bsEAX.png",
-    "use" to "https://i.imgur.com/lAqpwXz.png",
-    "up" to "https://i.imgur.com/fpYUWw3.png",
-    "ugly" to "https://i.imgur.com/aSzlk4n.png",
-    "uncle" to "https://i.imgur.com/wlvzqO2.png",
-    "understand" to "https://i.imgur.com/P8p1g34.png",
+    // R WORDS
+    "rain" to mapOf(
+        "imageUrl" to "https://i.imgur.com/R6kBNYo.png",
+        "definition" to "precipitation in liquid form"
+    ),
+    "rainbow" to mapOf(
+        "imageUrl" to "https://i.imgur.com/efhmiWW.png",
+        "definition" to "arc of colors in the sky"
+    ),
+    "recycle" to mapOf(
+        "imageUrl" to "https://i.imgur.com/NYX4Naz.png",
+        "definition" to "reuse of materials"
+    ),
+    "refrigerator" to mapOf(
+        "imageUrl" to "https://i.imgur.com/1khV6v5.png",
+        "definition" to "appliance for cooling food"
+    ),
+    "race" to mapOf(
+        "imageUrl" to "https://i.imgur.com/fJWSadI.png",
+        "definition" to "competition of speed"
+    ),
+    "rectangle" to mapOf(
+        "imageUrl" to "https://i.imgur.com/IbBbg4u.png",
+        "definition" to "a four-sided figure"
+    ),
 
 
-    //V WORDS
-    "visit" to "https://i.imgur.com/KqyXOzv.png",
-    "valley" to "https://i.imgur.com/gYCNRuC.png",
-    "vacuum" to "https://i.imgur.com/tB2wa2x.png",
-    "vehicle" to "https://i.imgur.com/0rzES1H.png",
-    "volleyball" to "https://i.imgur.com/gYLdkKU.png",
-    "vegetable" to "https://i.imgur.com/WU1ubHV.png",
+    // S WORDS
+    "same" to mapOf(
+        "imageUrl" to "https://i.imgur.com/QSdl5jS.png",
+        "definition" to "identical or not different"
+    ),
+    "school" to mapOf(
+        "imageUrl" to "https://i.imgur.com/mMR9nT4.png",
+        "definition" to "place of education"
+    ),
+    "selfie" to mapOf(
+        "imageUrl" to "https://i.imgur.com/LXpYK2x.png",
+        "definition" to "self-portrait photograph"
+    ),
+    "shirt" to mapOf(
+        "imageUrl" to "https://i.imgur.com/LYZecyw.png",
+        "definition" to "garment for the upper body"
+    ),
+    "scissors" to mapOf(
+        "imageUrl" to "https://i.imgur.com/TdNB6YP.png",
+        "definition" to "tool for cutting"
+    ),
+    "science" to mapOf(
+        "imageUrl" to "https://i.imgur.com/GDWZCTU.png",
+        "definition" to "study of the natural world"
+    ),
+    "space" to mapOf(
+        "imageUrl" to "https://i.imgur.com/HFTKyDL.jpg",
+        "definition" to "a place or an area that is empty"
+    ),
 
 
-    //W WORDS
-    "wallet" to "https://i.imgur.com/iELSHib.png",
-    "what" to "https://i.imgur.com/zRA5cu6.png",
-    "welcome" to "https://i.imgur.com/SJM3II4.png",
-    "wet" to "https://i.imgur.com/0zWxGIU.png",
-    "wall" to "https://i.imgur.com/TIKC4NJ.png",
-    "walk" to "https://i.imgur.com/Bts9NZx.png",
+    // T WORDS
+    "thin" to mapOf(
+        "imageUrl" to "https://i.imgur.com/UxxnAlM.png",
+        "definition" to "having small distance"
+    ),
+    "team" to mapOf(
+        "imageUrl" to "https://i.imgur.com/DQyftYS.png",
+        "definition" to "group working together"
+    ),
+    "thirsty" to mapOf(
+        "imageUrl" to "https://i.imgur.com/UxdWe5H.png",
+        "definition" to "feeling the need for fluid"
+    ),
+    "taxi" to mapOf(
+        "imageUrl" to "https://i.imgur.com/LVsWHdg.png",
+        "definition" to "vehicle for hire"
+    ),
+    "talk" to mapOf(
+        "imageUrl" to "https://i.imgur.com/WROUmsj.png",
+        "definition" to "communicate verbally"
+    ),
+    "table" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Y8wAPqF.png",
+        "definition" to "furniture with a flat top"
+    ),
 
 
-    //X WORDS
-    "xylophone" to "https://i.imgur.com/K9S07qv.png",
-    "xerox" to "https://i.imgur.com/IuriS7o.png",
-    "x-ray" to "https://i.imgur.com/mTYQTRG.png",
+    // U WORDS
+    "uniform" to mapOf(
+        "imageUrl" to "https://i.imgur.com/99bsEAX.png",
+        "definition" to "standard clothing"
+    ),
+    "use" to mapOf(
+        "imageUrl" to "https://i.imgur.com/lAqpwXz.png",
+        "definition" to "utilize or employ"
+    ),
+    "up" to mapOf(
+        "imageUrl" to "https://i.imgur.com/fpYUWw3.png",
+        "definition" to "direction above"
+    ),
+    "ugly" to mapOf(
+        "imageUrl" to "https://i.imgur.com/aSzlk4n.png",
+        "definition" to "unattractive or unpleasant"
+    ),
+    "uncle" to mapOf(
+        "imageUrl" to "https://i.imgur.com/wlvzqO2.png",
+        "definition" to "brother of one's parent"
+    ),
+    "understand" to mapOf(
+        "imageUrl" to "https://i.imgur.com/P8p1g34.png",
+        "definition" to "comprehend or grasp"
+    ),
 
 
-    //Y WORDS
-    "yesterday" to "https://i.imgur.com/o2I6KR6.png",
-    "yell" to "https://i.imgur.com/yvKmg7B.png",
-    "yellow" to "https://i.imgur.com/Jjz0nVv.png",
-    "yes" to "https://i.imgur.com/2Ny8ccQ.png",
-    "young" to "https://i.imgur.com/YoLdWn1.png",
-    "yawn" to "https://i.imgur.com/INzwFn3.png",
+    // V WORDS
+    "visit" to mapOf(
+        "imageUrl" to "https://i.imgur.com/KqyXOzv.png",
+        "definition" to "go to see someone"
+    ),
+    "valley" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gYCNRuC.png",
+        "definition" to "low land between hills"
+    ),
+    "vacuum" to mapOf(
+        "imageUrl" to "https://i.imgur.com/tB2wa2x.png",
+        "definition" to "cleaner that sucks up dirt"
+    ),
+    "vehicle" to mapOf(
+        "imageUrl" to "https://i.imgur.com/0rzES1H.png",
+        "definition" to "means of transportation"
+    ),
+    "volleyball" to mapOf(
+        "imageUrl" to "https://i.imgur.com/gYLdkKU.png",
+        "definition" to "team sport with a ball"
+    ),
+    "vegetable" to mapOf(
+        "imageUrl" to "https://i.imgur.com/WU1ubHV.png",
+        "definition" to "edible plant"
+    ),
 
 
-    //Z WORDS
-    "zebra" to "https://i.imgur.com/RfchmZF.png",
-    "zipper" to "https://i.imgur.com/WuuSwfx.png",
-    "zoo" to "https://i.imgur.com/UxdWe5H.png"
+    // W WORDS
+    "wallet" to mapOf(
+        "imageUrl" to "https://i.imgur.com/iELSHib.png",
+        "definition" to "small pocket for money"
+    ),
+    "what" to mapOf(
+        "imageUrl" to "https://i.imgur.com/zRA5cu6.png",
+        "definition" to "asking for information"
+    ),
+    "welcome" to mapOf(
+        "imageUrl" to "https://i.imgur.com/SJM3II4.png",
+        "definition" to "greeting for arrival"
+    ),
+    "wet" to mapOf(
+        "imageUrl" to "https://i.imgur.com/0zWxGIU.png",
+        "definition" to "covered or saturated with water"
+    ),
+    "wall" to mapOf(
+        "imageUrl" to "https://i.imgur.com/TIKC4NJ.png",
+        "definition" to "vertical structure"
+    ),
+    "walk" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Bts9NZx.png",
+        "definition" to "move on foot"
+    ),
 
+
+    // X WORDS
+    "xylophone" to mapOf(
+        "imageUrl" to "https://i.imgur.com/K9S07qv.png",
+        "definition" to "musical instrument"
+    ),
+    "xerox" to mapOf(
+        "imageUrl" to "https://i.imgur.com/IuriS7o.png",
+        "definition" to "copying process"
+    ),
+    "x-ray" to mapOf(
+        "imageUrl" to "https://i.imgur.com/mTYQTRG.png",
+        "definition" to "type of electromagnetic radiation"
+    ),
+
+
+    // Y WORDS
+    "yesterday" to mapOf(
+        "imageUrl" to "https://i.imgur.com/o2I6KR6.png",
+        "definition" to "day before today"
+    ),
+    "yell" to mapOf(
+        "imageUrl" to "https://i.imgur.com/yvKmg7B.png",
+        "definition" to "shout loudly"
+    ),
+    "yellow" to mapOf(
+        "imageUrl" to "https://i.imgur.com/Jjz0nVv.png",
+        "definition" to "color like ripe lemons"
+    ),
+    "yes" to mapOf(
+        "imageUrl" to "https://i.imgur.com/2Ny8ccQ.png",
+        "definition" to "affirmative response"
+    ),
+    "young" to mapOf(
+        "imageUrl" to "https://i.imgur.com/YoLdWn1.png",
+        "definition" to "in an early stage of life"
+    ),
+    "yawn" to mapOf(
+        "imageUrl" to "https://i.imgur.com/INzwFn3.png",
+        "definition" to "involuntary opening of mouth"
+    ),
+
+
+    // Z WORDS
+    "zebra" to mapOf(
+        "imageUrl" to "https://i.imgur.com/RfchmZF.png",
+        "definition" to "black and white striped mammal"
+    ),
+    "zipper" to mapOf(
+        "imageUrl" to "https://i.imgur.com/WuuSwfx.png",
+        "definition" to "fastening device"
+    ),
+    "zoo" to mapOf(
+        "imageUrl" to "https://i.imgur.com/UxdWe5H.png",
+        "definition" to "place for exhibiting animals"
+    )
 )
+

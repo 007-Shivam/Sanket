@@ -108,15 +108,28 @@ fun WordToSign(context: Context = LocalContext.current, navController: NavHostCo
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
-                        val inputText =
-                            wts.text.lowercase(Locale.ROOT)
-                        imageUrl = allWords[inputText]
-                        if (imageUrl != null) {
-                            showImg = true
+                        val inputText = wts.text.lowercase(Locale.ROOT)
+                        val wordInfo = allWords[inputText]
+                        if (wordInfo != null) {
+                            if (wordInfo is String) {
+                                imageUrl = wordInfo
+                            } else if (wordInfo is Map<*, *>) {
+                                imageUrl = wordInfo["imageUrl"] as? String
+                            }
+
+                            if (imageUrl != null) {
+                                showImg = true
+                            } else {
+                                Toast.makeText(
+                                    context,
+                                    "No image found for the input word.",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
                         } else {
                             Toast.makeText(
                                 context,
-                                "No image found for the input word.",
+                                "No information found for the input word.",
                                 Toast.LENGTH_LONG
                             ).show()
                         }

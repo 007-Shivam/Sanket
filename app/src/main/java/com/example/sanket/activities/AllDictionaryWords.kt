@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,6 +29,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,7 +43,8 @@ import com.example.sanket.data.allWords
 @Composable
 fun AllDictionaryWords(navController: NavHostController, letter: String) {
     val scrollState = rememberScrollState()
-    var showWord by remember { mutableStateOf("") }
+    var selectedWord by remember { mutableStateOf<String?>(null) }
+
 
     Box() {
         Image(
@@ -65,37 +68,69 @@ fun AllDictionaryWords(navController: NavHostController, letter: String) {
                 .verticalScroll(scrollState)
         ) {
             Dic_Words(
-                allWords = allWords.filterKeys { it.startsWith(letter, ignoreCase = true) }, // Filter words starting with the selected letter
-                onClick = { word ->
-                    showWord = word
-                }
-            )
+                allWords = allWords.filterKeys { it.startsWith(letter, ignoreCase = true) }
+            ) { word ->
+                selectedWord = word
+            }
         }
 
         Box(
             modifier = Modifier
-                .padding(top = 300.dp, bottom = 60.dp, start = 30.dp, end = 30.dp)
+                .padding(top = 250.dp, bottom = 60.dp, start = 30.dp, end = 30.dp)
                 .size(500.dp, 750.dp)
         ) {
-            if (showWord.isNotEmpty() && allWords.containsKey(showWord)) {
-                Text(
-                    text = showWord.uppercase(),
-                    modifier = Modifier.align(Alignment.TopCenter)
+            selectedWord?.let { word ->
+                Column(
+                    modifier = Modifier
+                        .align(Alignment.TopCenter)
                         .padding(bottom = 10.dp),
-                    style = TextStyle(
-                        fontSize = 25.sp,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        color = Color(94, 48, 35),
-                    ),
+                    verticalArrangement = Arrangement.Center
                 )
+                {
+                    Text(
+                        text = word.uppercase(),
+                        modifier = Modifier.align(Alignment.CenterHorizontally),
+                        style = TextStyle(
+                            fontSize = 25.sp,
+                            fontFamily = FontFamily.Serif,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(94, 48, 35),
+                        ),
+                    )
 
-                AsyncImage(
-                    model = allWords[showWord]!!,
-                    contentDescription = showWord,
-                    modifier = Modifier.size(1000.dp)
-                        .padding(10.dp)
-                )
+                    val wordDetails = allWords[word]
+
+                    if (wordDetails is Map<*, *>) {
+                        val definition = (wordDetails["definition"] as? String) ?: ""
+                        if (definition.isNotEmpty()) {
+                            Text(
+                                text = definition,
+                                modifier = Modifier.align(Alignment.CenterHorizontally),
+                                style = TextStyle(
+                                    fontSize = 20.sp,
+                                    fontFamily = FontFamily.Serif,
+                                    fontWeight = FontWeight.Normal,
+                                    color = Color.Black,
+                                ),
+                            )
+                        }
+
+                        val imageUrl = wordDetails["imageUrl"] as? String ?: ""
+                        if (imageUrl.isNotEmpty()) {
+                            AsyncImage(
+                                model = imageUrl,
+                                contentDescription = word,
+                                modifier = Modifier.size(1000.dp).padding(10.dp)
+                            )
+                        }
+                    } else if (wordDetails is String && wordDetails.isNotEmpty()) {
+                        AsyncImage(
+                            model = wordDetails,
+                            contentDescription = word,
+                            modifier = Modifier.size(1000.dp).padding(10.dp)
+                        )
+                    }
+                }
             }
         }
     }
@@ -103,7 +138,7 @@ fun AllDictionaryWords(navController: NavHostController, letter: String) {
 
 
 @Composable
-fun Dic_Words(allWords: Map<String, String>, onClick: (String) -> Unit) {
+fun Dic_Words(allWords: Map<String, Any>, onClick: (String) -> Unit) {
     Column {
         allWords.keys.sorted().forEach { key ->
             Text(
